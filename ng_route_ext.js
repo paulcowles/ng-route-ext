@@ -929,7 +929,7 @@ function ngViewFactory($route, $anchorScroll, $animate) {
             var clone = $transclude(newScope, function(clone) {
 
               var animations = $route.current.$$route.animations;
-              var animate = from && animations && animations[from.$$route.name];
+              var animate = from && animations && from.$$route && animations[from.$$route.name];
               if(animate){
                 clone[0].className = clone[0].className + " " + animate[1];
               }
